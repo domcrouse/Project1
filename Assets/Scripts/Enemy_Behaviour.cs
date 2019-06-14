@@ -13,12 +13,8 @@ Code For Project Re-Imagined*/
 
 public class Enemy_Behaviour : MonoBehaviour {
 
-    //[SerializeField] Transform[] waypoints;
-    //[SerializeField] float MovementsSpeed;
-    [SerializeField] private Transform EyeSight;
+
     [SerializeField] private LayerMask Visible;
-    //int Waypoints = 0;
-    //float MovementSpeed = 2f;
     private SpriteRenderer Enemy;
     public float Distance;
     public int scoreValue = 10;
@@ -34,14 +30,6 @@ public class Enemy_Behaviour : MonoBehaviour {
 
     //called every frame to detect the player
     void Update() {
-        See_Enemy();
-
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime); 
-        
-    }
-    //creates a raycast which is used to find the player
-    void See_Enemy()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(EyeSight.position, new Vector3(), 2f, Visible);
     }
 }
